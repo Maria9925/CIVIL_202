@@ -1,0 +1,2099 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 5: Conservation of Momentum &#8212; CIVIL 202: Fluid Mechanics and Pipe Flow</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module5ConservationofMomentum';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 4: Conservation of Energy" href="Module4ConservationEnergy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="chapter1.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CIVIL 202: Fluid Mechanics and Pipe Flow</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="chapter1.html">
+                    CIVIL 202 COURSE EXERCISES
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module1FluidProperties.html">Module 1: Fluid properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module2Hydrostatics.html">Module 2: Hydrostatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module3Kinematicfluid.html">Module 3: Kinematics and Conservation of Mass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module4ConservationEnergy.html">Module 4: Conservation of Energy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 5: Conservation of Momentum</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module5ConservationofMomentum.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 5: Conservation of Momentum</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lectures-25-conservation-of-momentum">Problems for Lectures 25: Conservation of Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-r">Question 1 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-r">Question 3 (***)[R]</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lectures-26-and-27-conservation-of-momentum">Problems for Lectures 26 and 27: Conservation of Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question 1 (**)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question 2 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-r">Question 4 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-r">Question 5 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-r">Question 8 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-r">Question 9 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question 10 (***)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lecture-29-transients-elastic-fluid-in-a-rigid-pipe">Problems	for	Lecture	29: Transients	– Elastic	fluid	in	a	rigid	pipe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question 1 (**)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question 2 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question 3 (**)[R]</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-5-conservation-of-momentum">
+<h1>Module 5: Conservation of Momentum<a class="headerlink" href="#module-5-conservation-of-momentum" title="Link to this heading">#</a></h1>
+<p>The exercises in this module range from lecture 25 to lecture 29.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>Global variables:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+g &amp;= 9.810 \; \;\textrm{(m/s2)}
+ &amp;\rho_{water} &amp;= 1000 \; \;\textrm{(kg/m3)}
+ &amp;\rho_{Hg} &amp;= 13600 \; \;\textrm{(kg/m3)}
+\\[10pt]
+ p_{atm} &amp;= 101325 \; \;\textrm{(Pa)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<section id="problems-for-lectures-25-conservation-of-momentum">
+<h2>Problems for Lectures 25: Conservation of Momentum<a class="headerlink" href="#problems-for-lectures-25-conservation-of-momentum" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="question-1-r">
+<h3>Question 1 (***)[R]<a class="headerlink" href="#question-1-r" title="Link to this heading">#</a></h3>
+<p>Water flows through a sluice gate as shown below. The friction losses through the gate are estimated to be 0.2 m. Find the horizontal thrust of the water per meter width on the sluice gate. Given: y1 = 2.2 m, y2 = 0.4 m and y3 = 0.5 m. {12.33 kN to the right}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/3e7aeb28a0bb800833cf1d369083dc1702ce783e09baa441ab1a86c0674431c2.png" src="_images/3e7aeb28a0bb800833cf1d369083dc1702ce783e09baa441ab1a86c0674431c2.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+h_{f} &amp;= 0.2 \; \;\textrm{(m)}
+ &amp;y_{1} &amp;= 2.2 \; \;\textrm{(m)}
+ &amp;y_{2} &amp;= 0.4 \; \;\textrm{(m)}
+\\[10pt]
+ y_{3} &amp;= 0.5 \; \;\textrm{(m)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Conservation of mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1A_1=V_2A_2\\
+V_1(y_1*b)=V_2(y_2*b)\\
+V_1\frac{y_1}{y_2}=V_2\\
+5.5V_1=V_2\\
+\end{split}\]</div>
+<p>Conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {p_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {p_2}{\rho g}+\frac{V_2^2}{2g}+h_{f}\\
+\frac {p_1}{\rho g}= 0, \frac {p_2}{\rho g}=0\\
+z_1+\frac{V_1^2}{2g}=z_2+\frac{(5.5V_1)^2}{2g}+h_{f}\\
+\end{split}\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\(V_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+V_1=(\frac{2g(z_1-z_2-h_f}{29.25}))^{0.5}
+\]</div>
+<p>Conservation of Momentum:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q (V_2x-V_1x)\\
+F_1-F_2-R_x=\rho Q (V_2x-V_1x)
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+z_{1} &amp;= 2.200 \; \;\textrm{(m)}
+\\[10pt]
+z_{2} &amp;= 0.400 \; \;\textrm{(m)}
+\\[10pt]
+V_{1} &amp;= \left( \frac{ 2 \cdot g \cdot \left( z_{1} - z_{2} - h_{f} \right) }{ 29.25 } \right) ^{ 0.5 } \\&amp;= \left( \frac{ 2 \cdot 9.810 \cdot \left( 2.200 - 0.400 - 0.200 \right) }{ 29.25 } \right) ^{ 0.5 } \\&amp;= 1.036 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+V_{2} &amp;= 5.5 \cdot V_{1} \\&amp;= 5.5 \cdot 1.036 \\&amp;= 5.698 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+b &amp;= 1 \; \;\textrm{(m)}
+\\[10pt]
+A_{1} &amp;= y_{1} \cdot b \\&amp;= 2.200 \cdot 1 \\&amp;= 2.200 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{2} &amp;= y_{2} \cdot b \\&amp;= 0.400 \cdot 1 \\&amp;= 0.400 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 1.036 \cdot 2.200 \\&amp;= 2.279 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \rho_{water} \cdot g \cdot \frac{ y_{1} }{ 2 } \cdot y_{1} - \rho_{water} \cdot g \cdot \frac{ y_{2} }{ 2 } \cdot y_{2} - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 1000 \cdot 9.810 \cdot \frac{ 2.200 }{ 2 } \cdot 2.200 - 1000 \cdot 9.810 \cdot \frac{ 0.400 }{ 2 } \cdot 0.400 - 1000 \cdot 2.279 \cdot \left( 5.698 - 1.036 \right) \\&amp;= 12330.415 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{x_{}} &amp;= 12.330 \; \;\textrm{(kN)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>The force on the structure is the same size but in the opposite direction:</p>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[
+\begin{aligned}
+F &amp;= 12.33 \; \;\textrm{(kN to the right)}
+\end{aligned}
+\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-2">
+<h3>Question 2 (***)<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p>Flow occurs over a spillway with a width of 100 m. The spillway has a cross section as shown below. The water depth on the upstream side of the spillway (y<Sub>1</sub>) is 20 m, and on the downstream side (y<Sub>2</sub>) is 1.5 m. The friction energy headloss over the spillway is 1.2 m. Determine the horizontal force of the water on the spillway. {147.7 MN to the right}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/10c0c32b06363fa8b9799295f527dd233385ebacbab1bfac0fe5b2e69c929566.png" src="_images/10c0c32b06363fa8b9799295f527dd233385ebacbab1bfac0fe5b2e69c929566.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+b &amp;= 100 \; \;\textrm{(m)}
+ &amp;y_{1} &amp;= 20 \; \;\textrm{(m)}
+ &amp;y_{2} &amp;= 1.500 \; \;\textrm{(m)}
+\\[10pt]
+ h_{f} &amp;= 1.200 \; \;\textrm{(m)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The first step is to apply the conservation of mass to establish the relationship between <span class="math notranslate nohighlight">\(V_2\)</span> and <span class="math notranslate nohighlight">\(V_1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1*A_1=V_2*A_2\\
+V_1*y_1*b=V_2*y_2*b\\
+V_2= \frac{y_1V1}{y_2}
+\end{split}\]</div>
+<p>Replacing the values for this exercise, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_2= \frac{20V_1}{1.5}\\
+V_2= 13.33 V_1
+\end{split}\]</div>
+<p>The next step is use the Bernoulli equation and replace the values of pressure to have the depth of the spillway in each section</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}+h_{f}\\
+\frac {P_1}{\rho g}= y_1 , 
+\frac {P_2}{\rho g}=y_2\\
+\end{split}\]</div>
+<p>but <span class="math notranslate nohighlight">\(z_1=z_2\)</span> because of horizontal floor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{V_1^2}{2g}=y_2+\frac{V_2^2}{2g}+h_{f}-y_1\\
+\frac{V_1^2}{2g}=y_2+\frac{(13.33*V_1)^2}{2g}+h_{f}-y_1
+\end{split}\]</div>
+<p>Once the velocities at both sections are determined, the conservation of momentum can then be applied:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\rho gh_{c1}A_1-\rho gh_{c2}A_2-F = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<p>The centroid of the spillway is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+h_c= \frac{y}{2}\\
+\rho g\frac {y_1}{2}A_1-\rho g\frac {y_2}{2}A_2-F = \rho Q (V_2-V_1)
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{1} &amp;= \left( \frac{ \left( y_{1} - y_{2} - h_{f} \right) \cdot 2 \cdot g }{ \left( \frac{ y_{1} }{ y_{2} } \right) ^{ 2 } - 1 } \right) ^{ 0.5 } \\&amp;= \left( \frac{ \left( 20 - 1.500 - 1.200 \right) \cdot 2 \cdot 9.810 }{ \left( \frac{ 20 }{ 1.500 } \right) ^{ 2 } - 1 } \right) ^{ 0.5 } \\&amp;= 1.386 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+V_{2} &amp;= y_{1} \cdot \frac{ V_{1} }{ y_{2} } \\&amp;= 20 \cdot \frac{ 1.386 }{ 1.500 } \\&amp;= 18.476 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot y_{1} \cdot b \\&amp;= 1.386 \cdot 20 \cdot 100 \\&amp;= 2771.333 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+A_{1} &amp;= b \cdot y_{1} \\&amp;= 100 \cdot 20 \\&amp;= 2000 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{2} &amp;= b \cdot y_{2} \\&amp;= 100 \cdot 1.500 \\&amp;= 150.000 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+F &amp;= \rho_{water} \cdot g \cdot y_{1} \cdot \frac{ A_{1} }{ 2 } - \rho_{water} \cdot g \cdot y_{2} \cdot \frac{ A_{2} }{ 2 } - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 1000 \cdot 9.810 \cdot 20 \cdot \frac{ 2000 }{ 2 } - 1000 \cdot 9.810 \cdot 1.500 \cdot \frac{ 150.000 }{ 2 } - 1000 \cdot 2771.333 \cdot \left( 18.476 - 1.386 \right) \\&amp;= 147734607.558 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+F_{kN} &amp;= \frac{ F }{ 1000000 } \\&amp;= \frac{ 147734607.558 }{ 1000000 } \\&amp;= 147.735 \; \;\textrm{(MN)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-3-r">
+<h3>Question 3 (***)[R]<a class="headerlink" href="#question-3-r" title="Link to this heading">#</a></h3>
+<p>The inlet water passage shown in the figure below is 3 m wide (normal to the plane of the figure) and narrows down to be 2.5 m wide at the outlet section. Determine the horizontal force acting on the structure. Assume ideal flow. {12.2 m3/s; 11.98 kN to the right}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/172f26a4acfaeb6783b0c99e518980fc40f2cf50d48fb45e7f63369b2c5b0fe5.png" src="_images/172f26a4acfaeb6783b0c99e518980fc40f2cf50d48fb45e7f63369b2c5b0fe5.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+b_{1} &amp;= 3 \; \;\textrm{(m)}
+ &amp;b_{2} &amp;= 2.5 \; \;\textrm{(m)}
+ &amp;z_{1} &amp;= 2 \; \;\textrm{(m)}
+\\[10pt]
+ z_{2} &amp;= 1 \; \;\textrm{(m)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+\frac {P_1}{\rho g}= 0, 
+\frac {P_2}{\rho g}=0\\
+z_1+\frac{V_1^2}{2g}=z_2+\frac{V_2^2}{2g}\\
+\end{split}\]</div>
+<p>Conservation of mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1A_1=V_2A_2\\
+V_1(y_1*b_1)=V_2(y_2*b_2)\\
+V_2=V_1\frac{y_1*b_1}{y_2*b_2}
+\end{split}\]</div>
+<p>Using the conservation of mass and energy to solve <span class="math notranslate nohighlight">\(V_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac{V_1^2}{2g}=z_2+\frac{(V_1\frac{y_1*b_1}{y_2*b_2})^2}{2g}\\
+\end{split}\]</div>
+<p>Conservation of Momentum:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q (V_2x-V_1x)\\
+F_1-F_2-R_x=\rho Q (V_2x-V_1x)
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+y_{1} &amp;= 2 \; \;\textrm{(m)}
+\\[10pt]
+y_{2} &amp;= 1 \; \;\textrm{(m)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solving for V_1 we have V_1= 2.03 m/s
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{2} &amp;= V_{1} \cdot \frac{ y_{1} \cdot b_{1} }{ y_{2} \cdot b_{2} } \\&amp;= 2.03 \cdot \frac{ 2 \cdot 3 }{ 1 \cdot 2.500 } \\&amp;= 4.872 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot \left( y_{1} \cdot b_{1} \right) \\&amp;= 2.03 \cdot \left( 2 \cdot 3 \right) \\&amp;= 12.2 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+A_{1} &amp;= b_{1} \cdot y_{1} \\&amp;= 3 \cdot 2 \\&amp;= 6 \; \;\textrm{(m^2)}\\[10pt]
+\\[10pt]
+A_{2} &amp;= b_{2} \cdot y_{2} \\&amp;= 2.500 \cdot 1 \\&amp;= 2.500 \; \;\textrm{(m^2)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \rho_{water} \cdot g \cdot \frac{ y_{1} }{ 2 } \cdot A_{1} - \rho_{water} \cdot g \cdot \frac{ y_{2} }{ 2 } \cdot A_{2} - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 1000 \cdot 9.810 \cdot \frac{ 2 }{ 2 } \cdot 6 - 1000 \cdot 9.810 \cdot \frac{ 1 }{ 2 } \cdot 2.500 - 1000 \cdot 12.2 \cdot \left( 4.872 - 2.03 \right) \\&amp;= 11980.846 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{x_{}} &amp;= \frac{ R_{x} }{ 1000 } \\&amp;= \frac{ 11980.846 }{ 1000 } \\&amp;= 11.981 \; \;\textrm{(kN)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>The force on the structure is the same size but in the opposite direction:</p>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[
+\begin{aligned}
+F &amp;= 11.98 \; \;\textrm{(kN to the right)}
+\end{aligned}
+\]</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="problems-for-lectures-26-and-27-conservation-of-momentum">
+<h2>Problems for Lectures 26 and 27: Conservation of Momentum<a class="headerlink" href="#problems-for-lectures-26-and-27-conservation-of-momentum" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="id1">
+<h3>Question 1 (**)[R]<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>A nozzle is attached to a pipe as shown below. The inside diameter of the pipe is 100 mm, while the water jet exiting from the nozzle has a diameter of 50 mm. The pressure at section 1 is 500 kPa, and the velocity at sections 1 is 6 m/s. Calculate the force of the water on the nozzle. {3.079 kN to the right}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/66b063dd2c41aba492b79f6e2c6409fccffaac0990627fdea849f09c54162682.png" src="_images/66b063dd2c41aba492b79f6e2c6409fccffaac0990627fdea849f09c54162682.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D_{1} &amp;= 0.100 \; \;\textrm{(m)}
+ &amp;D_{2} &amp;= 0.050 \; \;\textrm{(m)}
+ &amp;V_{1} &amp;= 6 \; \;\textrm{(m/s)}
+\\[10pt]
+ P_{1} &amp;= 500000 \; \;\textrm{(Pa)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the force of the water on the nozzle, the momentum equation can be aplied in the x-Direction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x = \rho Q (V_2-V_1)\\
+F_{p1}-F_{p2}-R_x=\rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<p>Replacing the <span class="math notranslate nohighlight">\(F_{p}\)</span> with <span class="math notranslate nohighlight">\(PA\)</span> we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P_1A_1-P_2A_2-R_x = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<p>To calculate the flow rate, the conservation of mass can be used</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1A_1=V_2A_2
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.100 \right) ^{ 2 } }{ 4 } \\&amp;= 0.008 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 6 \cdot 0.008 \\&amp;= 0.047  \\[10pt]
+\\[10pt]
+A_{2} &amp;= \pi \cdot \frac{ \left( D_{2} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.050 \right) ^{ 2 } }{ 4 } \\&amp;= 0.002  \\[10pt]
+\\[10pt]
+V_{2} &amp;= \frac{ Q }{ A_{2} } \\&amp;= \frac{ 0.047 }{ 0.002 } \\&amp;= 24.000  \\[10pt]
+\\[10pt]
+R_{x} &amp;= P_{1} \cdot A_{1} - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 500000 \cdot 0.008 - 1000 \cdot 0.047 \cdot \left( 24.000 - 6 \right) \\&amp;= 3078.761 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{x_{}} &amp;= \frac{ R_{x} }{ 1000 } \\&amp;= \frac{ 3078.761 }{ 1000 } \\&amp;= 3.079 \; \;\textrm{(kN)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id2">
+<h3>Question 2 (**)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The diameters in the figure below are 750 mm and 500 mm. The pressure at point 1 is 650 kPa and the velocity 2.8 m/s. Neglecting friction, find the resultant force on the horizontal conical reducer if water flows:</p>
+<p>a. to the right. {158.3 kN to the right}</p>
+<p>b. to the left. {158.3 kN to the right}</p>
+<p>c. What would happen with the previous answers if we did not neglect friction? {increase Fx in (a) and decrease Fx in (b)}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/f4d972ecc39863f6f8c4249eb88d426ec5a010e30608e1b6d8a2b20d9fe98ff5.png" src="_images/f4d972ecc39863f6f8c4249eb88d426ec5a010e30608e1b6d8a2b20d9fe98ff5.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D_{1} &amp;= 0.750 \; \;\textrm{(m)}
+ &amp;D_{2} &amp;= 0.500 \; \;\textrm{(m)}
+ &amp;p_{1} &amp;= 650000 \; \;\textrm{(Pa)}
+\\[10pt]
+ V_{1} &amp;= 2.800 \; \;\textrm{(m/s)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Conservation of mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1A_1=V_2A_2\\
+V_2=\frac{V_1A_1}{A_2}
+\end{split}\]</div>
+<p>Conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+z_1= 0, 
+z_2=0\\
+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+P_2=(\frac {P_1}{\rho g}+\frac{V_1^2}{2g}-\frac{V_2^2}{2g})*\rho g
+\end{split}\]</div>
+<p>Conservation of momentum:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x = \rho Q (V_2-V_1)\\
+P_1A_1-P_2A_2-R_x = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+</div>
+<p>a)</p>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{2} &amp;= \frac{ V_{1} \cdot \left( \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \right) }{ \pi \cdot \frac{ \left( D_{2} \right) ^{ 2 } }{ 4 } } \\&amp;= \frac{ 2.800 \cdot \left( 3.142 \cdot \frac{ \left( 0.750 \right) ^{ 2 } }{ 4 } \right) }{ 3.142 \cdot \frac{ \left( 0.500 \right) ^{ 2 } }{ 4 } } \\&amp;= 6.300 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+p_{2} &amp;= \left( \left( \frac{ p_{1} }{ \rho_{water} \cdot g } \right) + \left( \frac{ \left( V_{1} \right) ^{ 2 } }{ 2 \cdot g } \right) - \left( \frac{ \left( V_{2} \right) ^{ 2 } }{ 2 \cdot g } \right) \right) \cdot \rho_{water} \cdot g \\&amp;= \left( \left( \frac{ 650000 }{ 1000 \cdot 9.810 } \right) + \left( \frac{ \left( 2.800 \right) ^{ 2 } }{ 2 \cdot 9.810 } \right) - \left( \frac{ \left( 6.300 \right) ^{ 2 } }{ 2 \cdot 9.810 } \right) \right) \cdot 1000 \cdot 9.810 \\&amp;= 634075.000 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.750 \right) ^{ 2 } }{ 4 } \\&amp;= 0.442 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{2} &amp;= \pi \cdot \frac{ \left( D_{2} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.500 \right) ^{ 2 } }{ 4 } \\&amp;= 0.196 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 2.800 \cdot 0.442 \\&amp;= 1.237 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= p_{1} \cdot A_{1} - p_{2} \cdot A_{2} - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 650000 \cdot 0.442 - 634075.000 \cdot 0.196 - 1000 \cdot 1.237 \cdot \left( 6.300 - 2.800 \right) \\&amp;= 158331.361 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{x_{}} &amp;= \frac{ R_{x} }{ 1000 } \\&amp;= \frac{ 158331.361 }{ 1000 } \\&amp;= 158.331 \; \;\textrm{(kN)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>Force of the water on nozzle is 158.3 kN to the right</p>
+</div>
+<p>b)</p>
+<div class="toggle docutils container">
+<p>Reversing the flow direction gives the identical result, in the same direction as before if no friction is considered.</p>
+</div>
+<p>c)</p>
+<div class="toggle docutils container">
+<p>Assuming the same pressure at the larger section in both cases, as given, friction will reduce <span class="math notranslate nohighlight">\(F_2\)</span> and therefore increase <span class="math notranslate nohighlight">\(R_x\)</span> in case (a) and do the opposite in case (b).</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-3">
+<h3>Question 3 (***)<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<p>A perforated plate with 50% of its area consisting of small holes is installed at the outlet of a 30 cm diameter horizontal water pipe carrying water at a velocity of 2 m/s. Neglect energy losses and calculate the force of the water on the perforated plate. Assume that the pressure head in the pipe is much greater than it’s diameter, so that you can use a uniform pressure distribution for any pipe cross section. {142 N to the right}</p>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[
+\begin{aligned}
+V_{1} &amp;= 2 \; \;\textrm{(m/s)}
+ &amp;D_{1} &amp;= 0.300 \; \;\textrm{(m)}
+\end{aligned}
+\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The first step is calculate the velocity in section 2 by using the conservation of mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1*A_1=V_2*A_2\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_2 = 0.5*A_1\)</span> according the question.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_1*A_1=V_2*0.5*A_1\\
+V_2=\frac {V_2}{0.5}
+\end{split}\]</div>
+<p>Once the velocity is calculated, the pressure in section one can be calculated with the Bernoulli equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z_1= z_2\)</span>, and <span class="math notranslate nohighlight">\(P_2= 0 Pa\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac {P_1}{\rho g}=\frac{V_2^2}{2g}-\frac{V_1^2}{2g}
+\]</div>
+<p>Once the pressure in section one is calculated, the force of the water can be calculated with the conservation of Momentum:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x = \rho Q (V_2-V_1)\\
+P_1A_1-P_2A_2-R_x = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_2\)</span> is atmospheric pressure= 0</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R_x = -\rho Q (V_2-V_1)+P_1A_1\\
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{2} &amp;= \frac{ V_{1} }{ 0.5 } \\&amp;= \frac{ 2 }{ 0.5 } \\&amp;= 4.000 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.300 \right) ^{ 2 } }{ 4 } \\&amp;= 0.071  \\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 2 \cdot 0.071 \\&amp;= 0.141 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+P_{1} &amp;= \left( \frac{ \left( V_{2} \right) ^{ 2 } }{ 2 \cdot g } - \frac{ \left( V_{1} \right) ^{ 2 } }{ 2 \cdot g } \right) \cdot g \cdot \rho_{water} \\&amp;= \left( \frac{ \left( 4.000 \right) ^{ 2 } }{ 2 \cdot 9.810 } - \frac{ \left( 2 \right) ^{ 2 } }{ 2 \cdot 9.810 } \right) \cdot 9.810 \cdot 1000 \\&amp;= 6000.000 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= P_{1} \cdot A_{1} - \rho_{water} \cdot Q \cdot \left( V_{2} - V_{1} \right) \\&amp;= 6000.000 \cdot 0.071 - 1000 \cdot 0.141 \cdot \left( 4.000 - 2 \right) \\&amp;= 141.372 \; \;\textrm{(N)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>The force on the plate is 141.4 N to the right</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-4-r">
+<h3>Question 4 (***)[R]<a class="headerlink" href="#question-4-r" title="Link to this heading">#</a></h3>
+<p>A reducing right-angled bend lies in the horizontal plane. Water enters from the west at a velocity of 3 m/s and a pressure of 50 kPa, and leaves toward the north. The diameter of the entrance is 500 mm and at the exit 250 mm. Neglecting friction losses, find the magnitude of the x and y components of the resultant force on the bend. {11.6 kN; 6.2 kN}</p>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{1} &amp;= 3 \; \;\textrm{(m/s)}
+ &amp;p_{1} &amp;= 50000 \; \;\textrm{(Pa)}
+ &amp;D_{1} &amp;= 0.500 \; \;\textrm{(m)}
+\\[10pt]
+ D_{2} &amp;= 0.250 \; \;\textrm{(m)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+z_1= 0, 
+z_2=0\\
+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=\frac {P_2}{\rho g}+\frac{V_2^2}{2g}\\
+P_2=(\frac {P_1}{\rho g}+\frac{V_1^2}{2g}-\frac{V_2^2}{2g})*\rho g
+\end{split}\]</div>
+<p>Conservation of momentum in x:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x = \rho Q (V_2-V_1)\\
+P_1A_1-R_x = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_2=0
+\]</div>
+<p>Conservation of momentum in y:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_y = \rho Q (V_2-V_1)\\
+R_y-P_2A_2 = \rho Q (V_2-V_1)\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_1=0
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.500 \right) ^{ 2 } }{ 4 } \\&amp;= 0.196 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{2} &amp;= \pi \cdot \frac{ \left( D_{2} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.250 \right) ^{ 2 } }{ 4 } \\&amp;= 0.049 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 3 \cdot 0.196 \\&amp;= 0.589 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+V_{2} &amp;= \frac{ Q }{ A_{2} } \\&amp;= \frac{ 0.589 }{ 0.049 } \\&amp;= 12.000 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+p_{2} &amp;= \left( \left( \frac{ p_{1} }{ \rho_{water} \cdot g } \right) + \left( \frac{ \left( V_{1} \right) ^{ 2 } }{ 2 \cdot g } \right) - \left( \frac{ \left( V_{2} \right) ^{ 2 } }{ 2 \cdot g } \right) \right) \cdot \rho_{water} \cdot g \\&amp;= \left( \left( \frac{ 50000 }{ 1000 \cdot 9.810 } \right) + \left( \frac{ \left( 3 \right) ^{ 2 } }{ 2 \cdot 9.810 } \right) - \left( \frac{ \left( 12.000 \right) ^{ 2 } }{ 2 \cdot 9.810 } \right) \right) \cdot 1000 \cdot 9.810 \\&amp;= -17500.000 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+F_{x} &amp;= p_{1} \cdot A_{1} - \rho_{water} \cdot Q \cdot \left( 0 - V_{1} \right) \\&amp;= 50000 \cdot 0.196 - 1000 \cdot 0.589 \cdot \left( 0 - 3 \right) \\&amp;= 11584.623 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+F_{y} &amp;= \rho_{water} \cdot Q \cdot \left( V_{2} - 0 \right) + p_{2} \cdot A_{2} \\&amp;= 1000 \cdot 0.589 \cdot \left( 12.000 - 0 \right) + -17500.000 \cdot 0.049 \\&amp;= 6209.554 \; \;\textrm{(N)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>The force in x is 11.584 kN to the left and the force in y is 6.2 kN down.</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-5-r">
+<h3>Question 5 (***)[R]<a class="headerlink" href="#question-5-r" title="Link to this heading">#</a></h3>
+<p>The figure below shows a pipe that ends in a set of two nozzles (points 2 and 3) at right angles to each other, and exiting into the atmosphere. The nozzles are in the horizontal plane. The pipe has a diameter of 150 mm and nozzles 2 and 3 have exit diameters of 100 and 50 mm respectively. The exit velocity at both points 2 and 3 is 10 m/s. Assume ideal flow.</p>
+<p>Calculate the following:</p>
+<p>a)	The flow rate and velocity at at point 1.  {5.55 m/s}</p>
+<p>b)	The pressure at point 1. {34.57 kPa}</p>
+<p>c)	The size and direction of the force that the fluid exerts on the pipe. {420 N at 27.9° above East}</p>
+<p>d)	Assume the pressure at point 1 remains as in (b), but an energy headloss of 0.5 m occurs through each of the nozzles at points 2 and 3. Calculate the flow rate in the system and the velocities at points 1 and 2. Ignore energy losses other that those at the nozzles and assume the distribution of the flow between 2 and 3 remains the same as in (a). {91 L/s; 5.15 m/s; 9.3 m/s}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/12237781b9d3cb080762bbdb3ea9c3986c0b7dc0c0f7c8aa1ccdc0cce0e83ab6.png" src="_images/12237781b9d3cb080762bbdb3ea9c3986c0b7dc0c0f7c8aa1ccdc0cce0e83ab6.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D_{1} &amp;= 0.150 \; \;\textrm{(m)}
+ &amp;D_{2} &amp;= 0.100 \; \;\textrm{(m)}
+ &amp;D_{3} &amp;= 0.050 \; \;\textrm{(m)}
+\\[10pt]
+ V_{2} &amp;= 10 \; \;\textrm{(m/s)}
+ &amp;V_{3} &amp;= 10 \; \;\textrm{(m/s)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p>a)</p>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the flow rate and velocity in point 1 the conservation of mass can be used:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_1=Q_2+Q_3
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_1A_1=V_2A_2+V_3A_3
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{2} &amp;= \pi \cdot \frac{ \left( D_{2} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.100 \right) ^{ 2 } }{ 4 } \\&amp;= 0.008 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{3} &amp;= \pi \cdot \frac{ \left( D_{3} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.050 \right) ^{ 2 } }{ 4 } \\&amp;= 0.002 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.150 \right) ^{ 2 } }{ 4 } \\&amp;= 0.018 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q_{2} &amp;= V_{2} \cdot A_{2} \\&amp;= 10 \cdot 0.008 \\&amp;= 0.079 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+Q_{3} &amp;= V_{3} \cdot A_{3} \\&amp;= 10 \cdot 0.002 \\&amp;= 0.020 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+Q_{1} &amp;= Q_{2} + Q_{3} \\&amp;= 0.079 + 0.020 \\&amp;= 0.098 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+V_{1} &amp;= \frac{ Q_{1} }{ A_{1} } \\&amp;= \frac{ 0.098 }{ 0.018 } \\&amp;= 5.556 \; \;\textrm{(m/s)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<p>b)</p>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Using conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {p_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {p_2}{\rho g}+\frac{V_2^2}{2g}\\
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(z_1=z_2\)</span> because is horizontal and <span class="math notranslate nohighlight">\(p_2=0 Pa\)</span> because of atmospheric pressure</p>
+<p>Considering the assumptions, the pressure in point 1 is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac {p_1}{\rho g}=\frac{V_2^2}{2g}-\frac{V_1^2}{2g}\\
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+p_{1} &amp;= \left( \frac{ \left( V_{2} \right) ^{ 2 } - \left( V_{1} \right) ^{ 2 } }{ 2 \cdot g } \right) \cdot \rho_{water} \cdot g \\&amp;= \left( \frac{ \left( 10 \right) ^{ 2 } - \left( 5.56 \right) ^{ 2 } }{ 2 \cdot 9.81 } \right) \cdot 1000 \cdot 9.81 \\&amp;= 34567.90 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+p_{1_{}} &amp;= \frac{ p_{1} }{ 1000 } \\&amp;= \frac{ 34567.90 }{ 1000 } \\&amp;= 34.57 \; \;\textrm{(kPa)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<p>c)</p>
+<p><strong>Hint</strong></p>
+<div class="cell tag_hide-output tag_remove-input docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/056a33fc5b40add5ce21b4bc54763067d981d7c5c970f3ed66008c35dc6c7217.png" src="_images/056a33fc5b40add5ce21b4bc54763067d981d7c5c970f3ed66008c35dc6c7217.png" />
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>Momentum in x:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q(V_{out_x}-V_{in_x})\\
+\sum F_x= \rho Q(V_2-V_1)\\
+P_1A_1-F_x= \rho Q(V_2-V_1)\\
+P_1A_1-F_x= \rho Q_2V_2-\rho Q_1V_1)\\
+\end{split}\]</div>
+<p>Momentum in y. It is important to include the velocity sign in this equation; in this example <span class="math notranslate nohighlight">\(V_{3y}\)</span> is negative.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_y= \rho Q(V_{out_y}-V_{in_y})\\
+\sum F_y= \rho Q(-V_3-0)\\
+F_3+F_y= \rho Q_3*(-V_3)-0)\\
+\end{split}\]</div>
+<p>Once the <span class="math notranslate nohighlight">\(F_x\)</span> and <span class="math notranslate nohighlight">\(F_y\)</span> are calculated, the force can be determine as:</p>
+<div class="math notranslate nohighlight">
+\[
+F= \sqrt{F_x^2+F_y^2}
+\]</div>
+<p>and the direction of the force can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta= arctan (\frac{F_y}{F_x})
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+F_{x} &amp;= p_{1} \cdot A_{1} - \rho_{water} \cdot Q_{2} \cdot V_{2} + \rho_{water} \cdot Q_{1} \cdot V_{1} \\&amp;= 34567.90 \cdot 0.02 - 1000 \cdot 0.08 \cdot 10 + 1000 \cdot 0.10 \cdot 5.56 \\&amp;= 370.88 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+F_{y} &amp;= \rho_{water} \cdot Q_{3} \cdot \left( - V_{3} \right) \\&amp;= 1000 \cdot 0.02 \cdot \left( - 10 \right) \\&amp;= -196.35 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+F &amp;= \sqrt { \left( F_{x} \right) ^{ 2 } + \left( F_{y} \right) ^{ 2 } } \\&amp;= \sqrt { \left( 370.88 \right) ^{ 2 } + \left( -196.35 \right) ^{ 2 } } \\&amp;= 419.65 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+\theta &amp;= \operatorname{degrees} \left( \arctan \left( \frac{ \operatorname{abs} \left( F_{y} \right) }{ F_{x} } \right) \right) \\&amp;= \operatorname{degrees} \left( \arctan \left( \frac{ \operatorname{abs} \left( -196.35 \right) }{ 370.88 } \right) \right) \\&amp;= 27.90  \\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<p>d)</p>
+<div class="toggle docutils container">
+<p>Using conservation of energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=z_2+\frac {P_2}{\rho g}+\frac{V_2^2}{2g}+h_f\\
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(z_1=z_2\)</span> because is horizontal and <span class="math notranslate nohighlight">\(P_2=0 Pa\)</span> because of atmospheric pressure</p>
+<p>Assuming the distribution of the flow between 2 and 3 remains the same as in (a), it is necessary to calculate the distribution</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_2= \frac {0.0789}{0.0981}\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_2=0.80*Q_1\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_3=0.2*Q_1\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_2A_2=0.80V_1A_1\\
+\end{split}\]</div>
+<p>Using conservation of mass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_2*\frac{\pi D_2^2}{4}=0.80*V_1\frac{\pi D_1^2}{4}\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_2*D_2^2=0.80*V_1*D_1^2\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_2*(0.1)^2=0.80*V_1*(0.15)^2\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_2= 1.8* V_1
+\]</div>
+<p>Using conservation of energy and mass with an energy headloss of 0.5 m, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac {P_1}{\rho g}+\frac{V_1^2}{2g}=\frac{(1.8*V_1)^2}{2g}+h_f\\
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+h_{f} &amp;= 0.50 \; \;\textrm{(m)}
+\\[10pt]
+\mathrm{ratio}_{Q} &amp;= \frac{ Q_{2} }{ Q_{1} } \\&amp;= \frac{ 0.08 }{ 0.10 } \\&amp;= 0.80  \\[10pt]
+\\[10pt]
+\mathrm{ratio}_{V} &amp;= \mathrm{ratio}_{Q} \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ \left( D_{2} \right) ^{ 2 } } \\&amp;= 0.80 \cdot \frac{ \left( 0.15 \right) ^{ 2 } }{ \left( 0.10 \right) ^{ 2 } } \\&amp;= 1.80  \\[10pt]
+\\[10pt]
+V_{1} &amp;= \sqrt { \frac{ \left( \frac{ p_{1} }{ \rho_{water} \cdot g } - h_{f} \right) \cdot 2 \cdot g }{ \left( \mathrm{ratio}_{V} \right) ^{ 2 } - 1 } } \\&amp;= \sqrt { \frac{ \left( \frac{ 34567.90 }{ 1000 \cdot 9.81 } - 0.50 \right) \cdot 2 \cdot 9.81 }{ \left( 1.80 \right) ^{ 2 } - 1 } } \\&amp;= 5.15 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+V_{2} &amp;= \mathrm{ratio}_{V} \cdot V_{1} \\&amp;= 1.80 \cdot 5.15 \\&amp;= 9.26 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+Q &amp;= \left( V_{1} \cdot A_{1} \right) \cdot 1000 \\&amp;= \left( 5.15 \cdot 0.02 \right) \cdot 1000 \\&amp;= 90.94 \; \;\textrm{(L/s)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-6">
+<h3>Question 6 (**)<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h3>
+<p>A 40 mm diameter jet has a velocity of 25 m/s. If this jet were to strike a large flat plat normally, what would the resultant force on the plate be? (Tip: the jet direction will be parallel to the plate after hitting it) {785 N}</p>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D_{1} &amp;= \frac{ 40 }{ 1000 } &amp;= 0.040 \; \;\textrm{(m)}
+\\[10pt]
+V_{1} &amp;= 25 \; \;\textrm{(m/s)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The force exerted by the water on the flat can be calculated with the momentum equation as:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F_x = \rho Q (V_1-V_2cos \Theta)
+\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[
+cos \Theta=cos(90°)=0
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.040 \right) ^{ 2 } }{ 4 } \\&amp;= 0.001 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \rho_{water} \cdot A_{1} \cdot V_{1} \cdot \left( V_{1} - 0 \right) \\&amp;= 1000 \cdot 0.001 \cdot 25 \cdot \left( 25 - 0 \right) \\&amp;= 785.398 \; \;\textrm{(N)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-7">
+<h3>Question 7 (***)<a class="headerlink" href="#question-7" title="Link to this heading">#</a></h3>
+<p>Water hits the curved plate shown below that entirely reverses the flow direction. The diameter of the jet is 50 mm and it hits the plate at a velocity of 12 m/s. The water leaves the plate at the same velocity, but in the opposite direction. Find the force exerted by the water on the vane. {565 N to the right}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/0991be9b27c639aadbf4612e585da94957343e7aaf2ab2107374e0f1c53c3108.png" src="_images/0991be9b27c639aadbf4612e585da94957343e7aaf2ab2107374e0f1c53c3108.png" />
+</div>
+</div>
+<p><strong>Given:</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D &amp;= \frac{ 50 }{ 1000 } &amp;= 0.050 \; \;\textrm{(m)}
+\\[10pt]
+V &amp;= 12 \; \;\textrm{(m/s)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The force exerted by the water on the vane can be calculated with the momentum equation as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q(V_{out_x}-V_{in_x})\\
+\sum F_x= \rho Q(V_2-V_1)\\
+P_1A_1+P_2A_2-F_x= \rho Q(V_2-V_1)\\
+\end{split}\]</div>
+<p>The assumptions for this exerise are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P_1= 0 Pa\\
+P_2= 0 Pa\\
+\end{split}\]</div>
+<p>Next, the conservation of mass should be examined to understand why the velocities are equal</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_1=Q_2\\
+V_1*A_1=V_2*A_2\\
+\end{split}\]</div>
+<p>Since the areas are identical, the velocities in sections 1 and 2 are equal. For momentum conservation, it is important to include the sign of the velocity in section 2, which in this case is negative</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-F_x= \rho Q(-V-V)\\
+\end{split}\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A &amp;= \pi \cdot \frac{ \left( D \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.050 \right) ^{ 2 } }{ 4 } \\&amp;= 0.002 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V \cdot A \\&amp;= 12 \cdot 0.002 \\&amp;= 0.024 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \left( - \rho_{water} \right) \cdot Q \cdot \left( \left( - V \right) - V \right) \\&amp;= \left( - 1000 \right) \cdot 0.024 \cdot \left( \left( - 12 \right) - 12 \right) \\&amp;= 565.487 \; \;\textrm{(N)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<div class="toggle docutils container">
+<p>The force of the water on vane is 565 N to the right</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-8-r">
+<h3>Question 8 (***)[R]<a class="headerlink" href="#question-8-r" title="Link to this heading">#</a></h3>
+<p>A jet is bent through an angle θ = 120° by a blade in the horizontal plane as shown below. The water jet has a velocity of 25 m/s and a diameter of 20 mm. Calculate the size and direction of the force on the blade. {340 N at 30° above the horizon}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/78a65f2c4a5768e9c943b57da0a27aa56ddfec0e0f6076acc853e288e606d49b.png" src="_images/78a65f2c4a5768e9c943b57da0a27aa56ddfec0e0f6076acc853e288e606d49b.png" />
+</div>
+</div>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\theta &amp;= 120 \; \;\textrm{(°)}
+ &amp;V &amp;= 25 \; \;\textrm{(m/s)}
+ &amp;D &amp;= 0.020 \; \;\textrm{(m)}
+\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the size and direction of the force on the blade we need to calculate the force on the x and y axes. We can do this using the momentum equation:</p>
+<p>In the x-axis:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q(V_{2_x}-V_{1_x})\\
+-R_x= \rho Q(V_{2_x}-V_{1_x})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the x-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[V_{2x}= V_2*cos (180-\theta) m/s\]</div>
+<div class="math notranslate nohighlight">
+\[V_{1x}= 25 m/s \text{ (this is given)}\]</div>
+<p>In the conservation of momentum, it is important to include the sign that indicates the direction of the velocity component. Therefore, in this exercise, the <span class="math notranslate nohighlight">\(V_{2x}\)</span> component is negative</p>
+<div class="math notranslate nohighlight">
+\[
+-R_x= \rho Q(-V_{2x}-V_{1x})
+\]</div>
+<p>In the y-axis:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_y= \rho Q(V_{2_y}-V_{1_y})\\
+-R_y= \rho Q(V_{2_y}-V_{1_y})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the y-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_{2x}= V_2*sin (180-\theta) m/s\\
+V_{1x}= 0 m/s \text{( since $V_1$ is horizontal)}
+\end{split}\]</div>
+<p>Conidering the direction of the velocities, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+-R_y= \rho Q(-V_{2y}-V_{1y})
+\]</div>
+<p>Then, the size of the force can be calculated with the following equation:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \sqrt{(R_x)^2 + (R_y)^2}
+\]</div>
+<p>and the angle can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\Theta=\frac{R_y}{R_x}
+\]</div>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/223eaf78d22483aa7caffdf2aa9dc0b09e819ede3c08d950318316e63c52ca07.png" src="_images/223eaf78d22483aa7caffdf2aa9dc0b09e819ede3c08d950318316e63c52ca07.png" />
+</div>
+</details>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A &amp;= \pi \cdot \frac{ \left( D \right) ^{ 2 } }{ 4 } \\&amp;= 3.1416 \cdot \frac{ \left( 0.0200 \right) ^{ 2 } }{ 4 } \\&amp;= 0.0003 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V \cdot A \\&amp;= 25 \cdot 0.0003 \\&amp;= 0.0079 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+\alpha &amp;= 180 - \theta \\&amp;= 180 - 120 \\&amp;= 60 \; \;\textrm{(°)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \left( - \rho_{water} \right) \cdot Q \cdot \left( \left( - V \right) \cdot \cos \left( \operatorname{radians} \alpha \right) - V \right) \\&amp;= \left( - 1000 \right) \cdot 0.0079 \cdot \left( \left( - 25 \right) \cdot \cos \left( \operatorname{radians} 60 \right) - 25 \right) \\&amp;= 294.5243 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{y} &amp;= \left( - \rho_{water} \right) \cdot Q \cdot \left( \left( - V \right) \cdot \sin \left( \operatorname{radians} \alpha \right) - 0 \right) \\&amp;= \left( - 1000 \right) \cdot 0.0079 \cdot \left( \left( - 25 \right) \cdot \sin \left( \operatorname{radians} 60 \right) - 0 \right) \\&amp;= 170.0437 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+F &amp;= \sqrt { \left( R_{x} \right) ^{ 2 } + \left( R_{y} \right) ^{ 2 } } \\&amp;= \sqrt { \left( 294.5243 \right) ^{ 2 } + \left( 170.0437 \right) ^{ 2 } } \\&amp;= 340.0874 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+\theta_{F} &amp;= \operatorname{degrees} \left( \arctan \left( \frac{ R_{y} }{ R_{x} } \right) \right) \\&amp;= \operatorname{degrees} \left( \arctan \left( \frac{ 170.0437 }{ 294.5243 } \right) \right) \\&amp;= 30.0000 \; \;\textrm{(°)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-9-r">
+<h3>Question 9 (***)[R]<a class="headerlink" href="#question-9-r" title="Link to this heading">#</a></h3>
+<p>A jet of water with a velocity of 25 m/s and diameter of 40 mm strikes a blade in a horizontal plane. If the angle of deflection is 115° and friction reduces the velocity to 22 m/s, find;</p>
+<p>a.	the component of the force acting on the blade in the direction of the jet. {1.077 kN to the right}<br />
+b.	the component of the force normal/ perpendicular to the jet. {0.626 kN downwards}<br />
+c.	the magnitude and direction of the resultant force exerted on the blade. {1.246 kN at 30.2° below east}</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/56364849ddbaa581eb494e260fc7b715e71812c6060d9a319389a2e1251d925d.png" src="_images/56364849ddbaa581eb494e260fc7b715e71812c6060d9a319389a2e1251d925d.png" />
+</div>
+</div>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{1} &amp;= 25 \; \;\textrm{(m/s)}
+ &amp;D &amp;= 0.040 \; \;\textrm{(m)}
+ &amp;\theta &amp;= 115 \; \;\textrm{(°)}
+\\[10pt]
+ \theta_{rad} &amp;= 1.134 \; \;\textrm{(rad)}
+ &amp;V_{2} &amp;= 22 \; \;\textrm{(m/s)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p>a)</p>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The force on the X-axis can be calculated with the momentum equation as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_x= \rho Q(V_{out_x}-V_{in_x})\\
+-R_x= \rho Q(V_{out_x}-V_{in_x})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the X-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[
+V_{2x}= V_2*cos (180-\theta)
+\]</div>
+<p>In the conservation of momentum, it is important to include the sign that indicates the direction of the velocity component. Therefore, in this exercise, the <span class="math notranslate nohighlight">\(V_{2x}\)</span> component is negative</p>
+<div class="math notranslate nohighlight">
+\[
+-R_x= \rho Q(-V_{2x}-V_{1x})
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{1} &amp;= \pi \cdot \frac{ \left( D \right) ^{ 2 } }{ 4 } \\&amp;= 3.142 \cdot \frac{ \left( 0.040 \right) ^{ 2 } }{ 4 } \\&amp;= 0.001 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+Q &amp;= V_{1} \cdot A_{1} \\&amp;= 25 \cdot 0.001 \\&amp;= 0.031 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \left( - \rho_{water} \right) \cdot Q \cdot \left( \left( - V_{2} \right) \cdot \cos \left( \theta_{rad} \right) - V_{1} \right) \\&amp;= \left( - 1000 \right) \cdot 0.031 \cdot \left( \left( - 22 \right) \cdot \cos \left( 1.134 \right) - 25 \right) \\&amp;= 1077.491 \; \;\textrm{(N)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<p>b)</p>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>The force on the Y-axis can be calculated with the momentum equation as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sum F_y= \rho Q(V_{out_y}-V_{in_y})\\
+R_y= \rho Q(V_{out_y}-V_{in_y})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the X-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[
+V_{2y}= V_2*sin (180-\theta)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_y= \rho Q(V_{2y}-V_{1y})
+\]</div>
+<p>In this example, there is no component of the velocitu one in the Y-axis</p>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+R_{y} &amp;= \rho_{water} \cdot Q \cdot \left( V_{2} \cdot \sin \left( \theta_{rad} \right) - 0 \right) \\&amp;= 1000 \cdot 0.03 \cdot \left( 22 \cdot \sin \left( 1.13 \right) - 0 \right) \\&amp;= 626.39  \\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<p>c)</p>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>Once the <span class="math notranslate nohighlight">\(R_x\)</span> and <span class="math notranslate nohighlight">\(R_y\)</span> are calculated, the force can be determine as:</p>
+<div class="math notranslate nohighlight">
+\[
+F= \sqrt{R_x^2+R_y^2}
+\]</div>
+<p>and the direction of the force can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta= arctan (\frac{R_y}{R_x})
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+F &amp;= \sqrt { \left( R_{x} \right) ^{ 2 } + \left( R_{y} \right) ^{ 2 } } \\&amp;= \sqrt { \left( 1077.49 \right) ^{ 2 } + \left( 626.39 \right) ^{ 2 } } \\&amp;= 1246.34 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+\theta_{F} &amp;= \operatorname{degrees} \left( \arctan \left( \frac{ R_{y} }{ R_{x} } \right) \right) \\&amp;= \operatorname{degrees} \left( \arctan \left( \frac{ 626.39 }{ 1077.49 } \right) \right) \\&amp;= 30.17 \; \;\textrm{(°)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="question-10">
+<h3>Question 10 (***)<a class="headerlink" href="#question-10" title="Link to this heading">#</a></h3>
+<p>The figure below represents ideal flow in a horizontal plane. The jet (v = 12 m/s, D = 150 mm) is divided by the splitter so that one third of the water is diverted to A. Calculate the magnitude and direction of the resultant force on the blade if the blade is moving to the right at 5 m/s. {763.65 N at 19.11° below the horizontal.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/e7748c412f3a0e37d581a5da6d0b61de4bd6e25fc14e1bfeeab8aa606ceb985b.png" src="_images/e7748c412f3a0e37d581a5da6d0b61de4bd6e25fc14e1bfeeab8aa606ceb985b.png" />
+</div>
+</div>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_{1} &amp;= 12 \; \;\textrm{(m/s)}
+ &amp;D_{1} &amp;= 0.150 \; \;\textrm{(m)}
+ &amp;\mathrm{fraction}_{A} &amp;= 0.333 \; 
+\\[10pt]
+ V &amp;= 5 \; \;\textrm{(m/s)}
+ &amp;\theta &amp;= 60 \; \;\textrm{(°)}
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>First, the exercise provides <span class="math notranslate nohighlight">\(V_1\)</span>. However, since the system moves in the opposite direction with velocity <span class="math notranslate nohighlight">\(V\)</span>, we can calculate the relative velocity 1 (<span class="math notranslate nohighlight">\(u_1\)</span>) by subtracting the two velocities:</p>
+<div class="math notranslate nohighlight">
+\[
+v_1=V_1-V
+\]</div>
+<p>Then, we need to calculate the flow rate in A and B with the given fraction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q_A=Q*fraction_A\\
+Q_B=Q*(1-fraction_A)
+\end{split}\]</div>
+<p>To calculate the magnitud and direction of the resultant force on the blade we need to calculate the force on the x and y axes. We can do this using the momentum equation. Remember to include the sign in the velocities to indicate the direction:</p>
+<p>In the x-axis:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-R_x= \rho Q_A(-V_{2Ax}-V_{1Ax})+\rho Q_B(V_{2Bx}-V_{1Bx})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the x-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[V_{2Ax}=V_{2Bx}= v_1*cos (\theta) m/s\]</div>
+<div class="math notranslate nohighlight">
+\[V_{1Ax}=V_{1Bx} v_1 m/s\]</div>
+<p>In the y-axis:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R_y= \rho Q_A(-V_{2Ay}-V_{1Ay})+\rho Q_B(V_{2By}-V_{1By})\\
+\end{split}\]</div>
+<p>In this example, the velocity component along the y-axis can be determined as follows</p>
+<div class="math notranslate nohighlight">
+\[V_{2Ay}=V_{2By}= v_1*sin (\theta) m/s\]</div>
+<div class="math notranslate nohighlight">
+\[V_{1Ay}=V_{1By} 0 m/s\]</div>
+<p>Finally, the size of the force can be calculated with the following equation:</p>
+<div class="math notranslate nohighlight">
+\[
+R = \sqrt{(R_x)^2 + (R_y)^2}
+\]</div>
+<p>and the angle can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\Theta=\frac{R_y}{R_x}
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_{1} &amp;= \pi \cdot \frac{ \left( D_{1} \right) ^{ 2 } }{ 4 } \\&amp;= 3.14 \cdot \frac{ \left( 0.15 \right) ^{ 2 } }{ 4 } \\&amp;= 0.02 \; \;\textrm{(m2)}\\[10pt]
+\\[10pt]
+v_{1} &amp;= V_{1} - V \\&amp;= 12 - 5 \\&amp;= 7 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+Q &amp;= A_{1} \cdot v_{1} \\&amp;= 0.02 \cdot 7 \\&amp;= 0.12 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+Q_{A} &amp;= Q \cdot \mathrm{fraction}_{A} \\&amp;= 0.12 \cdot 0.33 \\&amp;= 0.04 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+Q_{B} &amp;= Q \cdot \left( 1 - \mathrm{fraction}_{A} \right) \\&amp;= 0.12 \cdot \left( 1 - 0.33 \right) \\&amp;= 0.08 \; \;\textrm{(m3/s)}\\[10pt]
+\\[10pt]
+R_{x} &amp;= \left( - \rho_{water} \right) \cdot Q_{A} \cdot \left( \left( - v_{1} \right) \cdot \cos \left( \operatorname{radians} \theta \right) - v_{1} \right) - \rho_{water} \cdot Q_{B} \cdot \left( v_{1} \cdot \cos \left( \operatorname{radians} \theta \right) - v_{1} \right) \\&amp;= \left( - 1000 \right) \cdot 0.04 \cdot \left( \left( - 7 \right) \cdot \cos \left( \operatorname{radians} 60 \right) - 7 \right) - 1000 \cdot 0.08 \cdot \left( 7 \cdot \cos \left( \operatorname{radians} 60 \right) - 7 \right) \\&amp;= 721.58 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R_{y} &amp;= \rho_{water} \cdot Q_{A} \cdot \left( \left( - v_{1} \right) \cdot \sin \left( \operatorname{radians} \theta \right) - 0 \right) + \rho_{water} \cdot Q_{B} \cdot \left( v_{1} \cdot \sin \left( \operatorname{radians} \theta \right) - 0 \right) \\&amp;= 1000 \cdot 0.04 \cdot \left( \left( - 7 \right) \cdot \sin \left( \operatorname{radians} 60 \right) - 0 \right) + 1000 \cdot 0.08 \cdot \left( 7 \cdot \sin \left( \operatorname{radians} 60 \right) - 0 \right) \\&amp;= 249.96 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+R &amp;= \sqrt { \left( R_{x} \right) ^{ 2 } + \left( R_{y} \right) ^{ 2 } } \\&amp;= \sqrt { \left( 721.58 \right) ^{ 2 } + \left( 249.96 \right) ^{ 2 } } \\&amp;= 763.65 \; \;\textrm{(N)}\\[10pt]
+\\[10pt]
+\theta_{F} &amp;= \operatorname{degrees} \left( \arctan \left( \frac{ R_{y} }{ R_{x} } \right) \right) \\&amp;= \operatorname{degrees} \left( \arctan \left( \frac{ 249.96 }{ 721.58 } \right) \right) \\&amp;= 19.11 \; \;\textrm{(°)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="problems-for-lecture-29-transients-elastic-fluid-in-a-rigid-pipe">
+<h2>Problems	for	Lecture	29: Transients	– Elastic	fluid	in	a	rigid	pipe<a class="headerlink" href="#problems-for-lecture-29-transients-elastic-fluid-in-a-rigid-pipe" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="id3">
+<h3>Question 1 (**)[R]<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>A 2 km long, 500 mm diameter pipeline carries water at a velocity of 2 m/s.  Calculate the pressure rise in the system if water assuming a rigid pipe and a water temperature of 15 °Celsius. {298 m}</p>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+D &amp;= 500 \; \;\textrm{(mm)}
+ &amp;L &amp;= 2 \; \;\textrm{(km)}
+ &amp;V &amp;= 2 \; \;\textrm{(m/s)}
+\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the pressure rise in the system the water hammer equation can be used.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c= \sqrt {E_v}{\rho_{water}}\\
+\Delta p= \rho c V\\
+H= \frac {\Delta p}{\rho_{water} g}
+\end{split}\]</div>
+<p>The bulk modulus of elasticity can be found in Table A.1 for 15°C <span class="math notranslate nohighlight">\(E_v= 2.14 x10^6 kN/m^2\)</span></p>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+E_{v} &amp;= 2140000000.00 \; \;\textrm{(N/m2)}
+\\[10pt]
+c &amp;= \sqrt { \frac{ E_{v} }{ \rho_{water} } } \\&amp;= \sqrt { \frac{ 2140000000.00 }{ 1000 } } \\&amp;= 1462.87 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+\Delta_{P} &amp;= \rho_{water} \cdot c \cdot V \\&amp;= 1000 \cdot 1462.87 \cdot 2 \\&amp;= 2925747.77 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+H &amp;= \frac{ \Delta_{P} }{ \rho_{water} \cdot g } \\&amp;= \frac{ 2925747.77 }{ 1000 \cdot 9.81 } \\&amp;= 298.24 \; \;\textrm{(m)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id4">
+<h3>Question 2 (**)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Calculate the celerity of a pressure wave in water at 20 °C assuming a water density of 1000 kg/m3 . What difference does it make to your answer if change in water density with temperature is taken into account? {1476.48 m/s; 1477.81 m/s, thus less than 0.1% difference}</p>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[
+\begin{aligned}
+T &amp;= 20 \; \;\textrm{(°C)}
+ &amp;\rho &amp;= 1000 \; \;\textrm{(kg/m3)}
+\end{aligned}
+\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the celerity the hammer equation can be used.</p>
+<div class="math notranslate nohighlight">
+\[
+c= \sqrt {\frac{E_v}{\rho}}
+\]</div>
+<p>From Table A.1, the density of water at 20 °C is <span class="math notranslate nohighlight">\(998.2 kg/m^3\)</span><br />
+From Table A.4, <span class="math notranslate nohighlight">\(E_v= 1030 x10^6 N/m^2\)</span></p>
+<p>The effect of the density can be calculated with the difference between the celerities:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{difference} = \left( \frac{c_2 - c_1}{c_2} \right)  100
+\]</div>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_hide-output tag_remove-input docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\rho_{20} &amp;= 998.20 \; \;\textrm{(kg/m3)}
+\\[10pt]
+E_{v} &amp;= 2180000000.00 \; \;\textrm{(N/m2)}
+\\[10pt]
+c_{1} &amp;= \sqrt { \frac{ E_{v} }{ \rho } } \\&amp;= \sqrt { \frac{ 2180000000.00 }{ 1000 } } \\&amp;= 1476.48 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+c_{2} &amp;= \sqrt { \frac{ E_{v} }{ \rho_{20} } } \\&amp;= \sqrt { \frac{ 2180000000.00 }{ 998.20 } } \\&amp;= 1477.81 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+\mathrm{difference} &amp;= \left( \frac{ c_{2} - c_{1} }{ c_{2} } \right) \cdot 100 \\&amp;= \left( \frac{ 1477.81 - 1476.48 }{ 1477.81 } \right) \cdot 100 \\&amp;= 0.09 \; \;\textrm{(%)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id5">
+<h3>Question 3 (**)[R]<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Find the celerity of a pressure wave in benzene if a rigid pipe is assumed. If the initial flow velocity is 2 m/s, what will the increased pressure and pressure head be if a valve in the pipe is suddenly closed? {1081.88 m/s; 1.9 MPa; 220.57 m benzene}</p>
+<p><strong>Given</strong>:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[
+\begin{aligned}
+V &amp;= 2 \; \;\textrm{(m/s)}
+\end{aligned}
+\]</div>
+</div>
+</div>
+<p><strong>Hint</strong></p>
+<div class="toggle docutils container">
+<p>To calculate the pressure rise in the system the water hammer equation can be used.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c= \sqrt {E_v}{\rho_{water}}\\
+\Delta p= \rho c V\\
+\end{split}\]</div>
+<p>After calculating the pressure increase, the next step is to determine the pressure head</p>
+<div class="math notranslate nohighlight">
+\[
+H= \frac {\Delta p}{\rho_{water} g}
+\]</div>
+<p>In Table A.4 for benzene S= 0.88 and <span class="math notranslate nohighlight">\(E_v= 1030 x10^6 N/m^2\)</span></p>
+</div>
+<p><strong>Solution</strong></p>
+<div class="cell tag_hide-output tag_remove-input docutils container">
+<details class="hide above-output">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell outputs</span>
+<span class="expanded">Hide code cell outputs</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+S &amp;= 0.88 \; 
+\\[10pt]
+\rho_{benz} &amp;= S \cdot \rho_{water} \\&amp;= 0.88 \cdot 1000 \\&amp;= 880.00 \; \;\textrm{(kg/m3)}\\[10pt]
+\\[10pt]
+E_{v} &amp;= 1030000000 \; \;\textrm{(N/m2)}
+\\[10pt]
+c &amp;= \sqrt { \frac{ E_{v} }{ S \cdot \rho_{water} } } \\&amp;= \sqrt { \frac{ 1030000000 }{ 0.88 \cdot 1000 } } \\&amp;= 1081.88 \; \;\textrm{(m/s)}\\[10pt]
+\\[10pt]
+\Delta_{P} &amp;= \rho_{benz} \cdot c \cdot V \\&amp;= 880.00 \cdot 1081.88 \cdot 2 \\&amp;= 1904100.84 \; \;\textrm{(Pa)}\\[10pt]
+\\[10pt]
+\Delta_{P_{Mpa}} &amp;= \frac{ \Delta_{P} }{ 1000000 } \\&amp;= \frac{ 1904100.84 }{ 1000000 } \\&amp;= 1.90 \; \;\textrm{(MPa)}\\[10pt]
+\\[10pt]
+H &amp;= \frac{ \Delta_{P} }{ \rho_{benz} \cdot g } \\&amp;= \frac{ 1904100.84 }{ 880.00 \cdot 9.81 } \\&amp;= 220.57 \; \;\textrm{(m)}\\[10pt]
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module4ConservationEnergy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4: Conservation of Energy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lectures-25-conservation-of-momentum">Problems for Lectures 25: Conservation of Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-r">Question 1 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-r">Question 3 (***)[R]</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lectures-26-and-27-conservation-of-momentum">Problems for Lectures 26 and 27: Conservation of Momentum</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question 1 (**)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Question 2 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-r">Question 4 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-r">Question 5 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7 (***)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-r">Question 8 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9-r">Question 9 (***)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question 10 (***)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-for-lecture-29-transients-elastic-fluid-in-a-rigid-pipe">Problems	for	Lecture	29: Transients	– Elastic	fluid	in	a	rigid	pipe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Question 1 (**)[R]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Question 2 (**)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Question 3 (**)[R]</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
